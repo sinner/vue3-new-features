@@ -16,7 +16,8 @@
         <v-toolbar
           dark
           color="blue darken-3"
-          class="mb-1"
+          class="mb-1 center"
+          width="800"
         >
           <v-text-field
             v-model="search"
@@ -27,7 +28,7 @@
             prepend-inner-icon="mdi-search"
             label="Search"
           ></v-text-field>
-          <template v-if="$vuetify.breakpoint.mdAndUp">
+          <template v-if="$vuetify.breakpoint.smAndUp">
             <v-spacer></v-spacer>
             <v-select
               v-model="sortBy"
@@ -70,9 +71,6 @@
             v-for="item in props.items"
             :key="item.id"
             cols="12"
-            sm="6"
-            md="4"
-            lg="12"
           >
             <developer-card :item="item"></developer-card>
           </v-col>
@@ -174,7 +172,7 @@ export default {
       filter: {},
       sortDesc: false,
       page: 1,
-      itemsPerPage: 10,
+      itemsPerPage: 5,
       sortBy: 'name',
       keys: [
         'Name',
@@ -217,4 +215,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.center {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
 </style>

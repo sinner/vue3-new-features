@@ -54,11 +54,17 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      dialog: false,
+    };
+  },
   methods: {
     moment(text) {
       return moment(text);
     },
     reviewItem() {
+      this.dialog = true;
       console.log('--- Reviewing Item: ', {
         item: this.item,
       });
