@@ -1,5 +1,6 @@
 <template>
   <v-container fluid>
+    {{ msg }}
     <v-data-iterator
       :class="'data-list'"
       :items="developerList"
@@ -160,6 +161,11 @@ export default {
   name: 'developers-list',
   components: {
     'developer-card': DeveloperCard,
+  },
+  props: {
+    msg: {
+      type: String,
+    },
   },
   data() {
     return {
