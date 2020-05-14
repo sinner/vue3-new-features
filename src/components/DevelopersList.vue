@@ -4,7 +4,7 @@
     <v-data-iterator
       :class="'data-list'"
       :items="developerList"
-      :items-per-page.sync="itemsPerPage"
+      v-model:items-per-page="itemsPerPage"
       :page="page"
       :search="search"
       :custom-filter="filterData"
